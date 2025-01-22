@@ -1,0 +1,21 @@
+# 1. Python 공식 이미지 기반으로 설정
+FROM python:3.13
+
+# 2. 작업 디렉토리 설정
+WORKDIR /app
+
+# 3. 필요한 의존성 파일을 복사
+COPY requirements.txt .
+RUN pip install --no-cache-dir -r requirements.txt
+
+# 4. 코드 복사
+COPY . /app
+
+# 5. Uvicorn 설치 (만약 requirements에 없으면)
+RUN pip install uvicorn fastapi
+
+# 6. 8000 포트 노출
+EXPOSE 8001
+
+# 7. FastAPI 서버 실행 (reload 옵션 추가)
+CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8001", "--reload"]
