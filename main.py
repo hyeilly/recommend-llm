@@ -1,13 +1,18 @@
-from fastapi import FastAPI
-from endpoints.test import router as service1_router
+from fastapi import FastAPI, APIRouter
 
-app = FastAPI()
-
-app.include_router(service1_router, prefix="/test")
+router = APIRouter()
 
 @app.get("/")
 async def root():
-    return {"message": "Welcome to service-repo-1 API"}
+    return {"message": "Welcome to recommend-llm API"}
+
+@app.get("/zxc0585")
+async def example():
+    return {"message": "This is the example endpoint zxc0585"}
+
+
+app = FastAPI(title="recommend-llm", description="LLM 추천 프로젝트 API 서비스")
+app.include_router(router)
 
 
 # if __name__ == "__main__":
