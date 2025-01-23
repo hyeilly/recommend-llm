@@ -4,11 +4,11 @@ app = FastAPI(title="recommend-llm", description="LLM 추천 프로젝트 API �
 router = APIRouter()
 
 app.include_router(router)
-@app.get("/")
+@router.get("/")
 async def root():
     return {"message": "Welcome to recommend-llm API"}
 
-@app.get("/zxc0585")
+@router.get("/zxc0585")
 async def example():
     return {"message": "This is the example endpoint zxc0585"}
 
