@@ -6,6 +6,6 @@ services:
       context: .
       dockerfile: Dockerfile.dev
     volumes:
-      - .:/app  # 로컬 파일과 컨테이너 파일 동기화
+      - ./recommend_llm:/app  # 로컬 파일과 컨테이너 파일 동기화
     ports:
       - "8001:8001"  # 8000 포트로 접근

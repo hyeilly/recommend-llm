@@ -9,10 +9,7 @@ COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
 # 4. 코드 복사
-COPY . /app
-
-# 5. Uvicorn 설치 (만약 requirements에 없으면)
-RUN pip install uvicorn fastapi
+COPY ./recommend_llm /app
 
 # 6. 8000 포트 노출
 EXPOSE 8001
