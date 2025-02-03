@@ -8,7 +8,7 @@ setup(
         # "djangorestframework"
         "fastapi",
         "uvicorn",
-        "pydandtic"
+        # "pydandtic"
     ],
     description="recommend_llm service for Django and FastAPI",
     author="hyeilly",
