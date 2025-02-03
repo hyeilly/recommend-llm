@@ -1,5 +1,5 @@
 from fastapi import FastAPI, APIRouter
-from core_api.app.services.test import TestPrinter
+from app.services.test import TestPrinter
 
 app = FastAPI(title="recommend-llm", description="LLM 추천 프로젝트 API 서비스")
 router = APIRouter()
