@@ -4,6 +4,7 @@ from rest_framework.response import Response
 from rest_framework import status
 from .models import Item
 from bson import ObjectId
+from core.common.db.mongo_pymongo import PyMongoConnection
 
 
 def test_endpoint(request):
@@ -12,8 +13,22 @@ def test_endpoint(request):
 
 @api_view(['GET'])
 def hello_world(request):
+    test = "mongo Connect"
+    mongo_conn = None
+    try:
+        mongo_conn = PyMongoConnection(db_name='subscr_renew')
+        test = "success"
+        print("MongoDB connection successful!")
+    except Exception as e:
+        print(f"Failed to connect to MongoDB: {e}")
+        test = "fail"
+    finally:
+        print("mongo_conn", mongo_conn)
+        if mongo_conn:
+            mongo_conn.close()
+    
     return Response({
-        "message": "Hello, World!12345",
+        "message": f"Hello, World! {test}",
         "status": "success"
     })
 
