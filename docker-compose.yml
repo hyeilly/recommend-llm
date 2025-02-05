@@ -7,13 +7,13 @@ services:
       dockerfile: Dockerfile.dev
     container_name: recommend-llm-django
     environment:
-      DJANGO_SETTINGS_MODULE: app.recommend_llm.settings
+      DJANGO_SETTINGS_MODULE: recommend_llm.settings
       DJANGO_ENV: development
     volumes:
       - .:/app
     ports:
       - "8000:8000"
-    command: gunicorn app.recommend_llm.wsgi:application --bind 0.0.0.0:8000 --reload
+    command: gunicorn recommend_llm.wsgi:application --bind 0.0.0.0:8000 --reload
     networks:
       - backend
     working_dir: /app

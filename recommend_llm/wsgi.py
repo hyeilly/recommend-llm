@@ -1,6 +1,6 @@
 import os
-from app.recommend_llm.wsgi import get_wsgi_application
+from django.core.wsgi import get_wsgi_application
 
-os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'app.recommend_llm.settings')
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'recommend_llm.settings')
 
 application = get_wsgi_application()

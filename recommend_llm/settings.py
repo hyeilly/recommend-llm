@@ -41,7 +41,7 @@ MIDDLEWARE = [
 ]
 
 # Django 프로젝트의 기본 설정들
-ROOT_URLCONF = 'app.recommend_llm.urls'  # URL 설정 파일의 위치
+ROOT_URLCONF = 'recommend_llm.urls'  # URL 설정 파일의 위치
 
 # 템플릿 설정도 필요할 수 있습니다
 TEMPLATES = [
@@ -61,7 +61,7 @@ TEMPLATES = [
 ]
 
 # WSGI 애플리케이션 설정
-WSGI_APPLICATION = 'app.recommend_llm.wsgi.application'
+WSGI_APPLICATION = 'recommend_llm.wsgi.application'
 
 # DEBUG 모드 설정 (개발 환경에서는 True)
 DEBUG = True

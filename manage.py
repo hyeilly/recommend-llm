@@ -3,9 +3,9 @@ import os
 import sys
 
 def main():
-    os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'app.recommend_llm.settings')
+    os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'recommend_llm.settings')
     try:
-        from app.recommend_llm.management import execute_from_command_line
+        from django.core.management import execute_from_command_line
     except ImportError as exc:
         raise ImportError(
             "Couldn't import Django. Are you sure it's installed?"
