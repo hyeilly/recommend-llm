@@ -13,7 +13,7 @@ setup(
     description="recommend_llm service for Django and FastAPI",
     author="hyeilly",
     author_email="dev.jiine@gmail.com",
-    url="https://github.com/hyeilly/recommend-llm",
+    url="https://github.com/hyeilly/recommend-llm@release/fastapi",
     classifiers=[
         "Programming Language :: Python :: 3",
         "License :: OSI Approved :: MIT License",
