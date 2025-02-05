@@ -1,6 +1,22 @@
 version: '3'
 
 services:
+  recommend-llm-django:
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
+    container_name: recommend-llm-django
+    environment:
+      DJANGO_SETTINGS_MODULE: app.recommend_llm.settings
+      DJANGO_ENV: development
+    volumes:
+      - .:/app
+    ports:
+      - "8000:8000"
+    command: gunicorn app.recommend_llm.wsgi:application --bind 0.0.0.0:8000 --reload
+    networks:
+      - backend
+    working_dir: /app
   recommend-llm:
     build:
       context: .
@@ -9,3 +25,6 @@ services:
       - ./recommend_llm:/app  # 로컬 파일과 컨테이너 파일 동기화
     ports:
       - "8001:8001"  # 8000 포트로 접근
+networks:
+  backend:
+    driver: bridge

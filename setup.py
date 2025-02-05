@@ -5,10 +5,7 @@ setup(
     version="0.1",
     packages=find_packages(),
     install_requires=[
-        # "djangorestframework"
-        "fastapi",
-        "uvicorn",
-        # "pydandtic"
+        "uvicorn"
     ],
     description="recommend_llm service for Django and FastAPI",
     author="hyeilly",
